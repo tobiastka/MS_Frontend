@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.ms-carousel-body {
+
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.ms-carousel-images {
+    display: flex;
+    height: 100%;
+}
+
+.ms-carousel-images-img {}
+
+.ms-carousel-controls {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.ms-carousel-button {
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    background-color: var(--color-carousel-controles);
+    transition: background-color 300ms;
+}
+
+.ms-carousel-button:hover {
+    background-color: var(--color-carousel-controles-hover);
+}
+
+.carousel-button-left {
+    left: 0;
+}
+
+.carousel-button-right {
+    right: 0;
+}
+
+.ms-carousel-title {
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    text-align: center;
+}
+
+.ms-carousel-title-text {
+    background-color: #454545;
+    display: inline;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #FFE6C7;
+    font-size: 1.4rem;
+}

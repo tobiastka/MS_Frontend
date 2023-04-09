@@ -1,0 +1,7 @@
+.ms-home-body {}
+
+.ms-home-section-small {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}

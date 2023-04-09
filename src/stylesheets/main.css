@@ -1,0 +1,14 @@
+:root {
+  --color-primario: #472726;
+  --color-secundario: #8C5D58;
+  --color-claro: #fff9f8;
+  --color-oscuro: #471C57;
+  --color-carousel-controles: #39364668;
+  --color-carousel-controles-hover: #39364690;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
