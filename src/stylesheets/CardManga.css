@@ -1,0 +1,74 @@
+.ms-card-body {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #45454589;
+    height: 100%;
+    background-color: var(--color-claro);
+    transition: background-color, 500ms;
+    cursor: pointer;
+}
+
+.ms-card-body:hover {
+    background-color: var(--color-claro-2);
+
+}
+
+
+.ms-card-img-container {
+    height: 70%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+
+}
+
+.ms-card-img {
+    height: 95%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    position: absolute;
+}
+
+.ms-card-info {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ms-card-price {
+    font-size: 1.5rem;
+}
+
+.ms-card-status {
+    color: var(--color-en-stock);
+    font-size: 0.8rem;
+}
+
+
+.ms-card-button {
+    padding: 0.9rem;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.3rem;
+    border: none;
+    color: var(--color-claro);
+    background-color: var(--color-verde);
+    cursor: pointer;
+    max-height: 40;
+    transition: background-color, 300ms;
+    transition: font-size, 300ms;
+}
+
+.ms-card-button:hover {
+    background-color: var(--color-verde-2);
+    font-size: 1.4rem;
+}

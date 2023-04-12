@@ -1,7 +1,12 @@
-.ms-home-body {}
+.ms-home-body {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
 .ms-home-section-small {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     justify-content: space-between;
 }

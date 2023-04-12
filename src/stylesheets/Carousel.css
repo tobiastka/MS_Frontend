@@ -5,6 +5,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     overflow: hidden;
+    box-shadow: 5px 4px 12px 1px rgba(0, 0, 0, 0.129);
 }
 
 .ms-carousel-images {
