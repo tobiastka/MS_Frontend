@@ -3,8 +3,9 @@ import LeftArrow from '../icons/LeftArrow'
 import RightArrow from '../icons/RightArrow'
 
 import { useRef } from 'react'
+import useBannerImages from '../hooks/useBannerImages'
 
-const Carousel = ({ title, width, height, imgs }) => {
+const Carousel = ({ title, width, height, type }) => {
   const ARROW_SIZE = 30
   const refImagesDiv = useRef()
 
@@ -40,11 +41,15 @@ const Carousel = ({ title, width, height, imgs }) => {
     }, 10)
   }
 
+  const { active, images } = useBannerImages(type)
+
   return (
     <div style={{ width, maxWidth: width, height }} className='ms-carousel-body'>
       <div className='ms-carousel-images' ref={refImagesDiv}>
         {
-                    imgs.map(img => <img className='ms-carousel-images-img' src={img} alt='' />)
+                    active
+                      ? images.map(({ imageURL, type, id }) => <img key={id} className='ms-carousel-images-img' src={imageURL} alt={`${type} image`} />)
+                      : ''
                 }
 
       </div>
