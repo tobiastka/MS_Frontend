@@ -93,7 +93,8 @@
     transition: color 500ms;
 }
 
-.ms-navbar-pages-item:hover {
+.ms-navbar-pages-item:hover,
+.active {
     font-weight: bold;
     background-color: var(--color-primario);
     color: white;

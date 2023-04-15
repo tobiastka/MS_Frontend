@@ -1,0 +1,16 @@
+.ms-shop-body {
+    background-color: red;
+    display: flex;
+    gap: 0.3rem;
+    width: 100%;
+}
+
+.ms-shop-filter {
+    background-color: blue;
+    flex: 1;
+}
+
+.ms-shop-products {
+    background-color: blueviolet;
+    flex: 4;
+}
