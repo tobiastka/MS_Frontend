@@ -1,35 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import '../stylesheets/GalleryManga.css'
 import CardManga from './CardManga'
+import RightArrow from '../icons/RightArrow'
+import LeftArrow from '../icons/LeftArrow'
+import useMangas from '../hooks/useMangas'
+import useSerie from '../hooks/useSeries'
 
 const GalleryManga = ({ mangaName }) => {
-  const [mangas, setMangas] = useState([])
-  const [serie, setSerie] = useState({})
-  const baseURL = 'http://localhost:3000'
-  console.log(mangas)
-  useEffect(() => {
-    fetch(`${baseURL}/collection?nombre=${mangaName}`)
-      .then(response => response.json())
-      .then(data => setSerie(data))
-      .catch(error => console.log(error))
-    fetch(`${baseURL}/manga?nombre=${mangaName}`)
-      .then(response => response.json())
-      .then(data => data.map(manga => {
-        return {
-          id: manga.id,
-          nombre: manga.collection.nombre,
-          autor: manga.collection.autor,
-          cantidadVolumenes: manga.collection.cantidadVolumenes,
-          formato: manga.collection.formato,
-          imagenBanner: manga.collection.imagenBanner,
-          resumenHistoria: manga.collection.resumenHistoria,
-          imagenTomo: manga.imagen,
-          volumen: manga.volumen
-        }
-      }))
-      .then(data => setMangas(data))
-      .catch(error => console.log(error))
-  }, [mangaName])
+  const { mangas, mangasActive } = useMangas(mangaName)
+  const { serie, serieActive } = useSerie(mangaName)
+  console.log(serie)
+  const [page, setPage] = useState(0)
+  const MANGAS_PER_PAGE = 4
+
+  const stillMoreMangas = (page) => {
+    return (page + 1) * MANGAS_PER_PAGE < mangas.length
+  }
+
+  const stillLessMangas = (page) => {
+    return (page - 1) >= 0
+  }
+  const nextPageHandler = () => {
+    if (stillMoreMangas(page))setPage(page => ++page)
+  }
+
+  const prevPageHandler = () => {
+    if (stillLessMangas(page)) setPage(page => --page)
+  }
 
   return (
     <div className='ms-gallery-body'>
@@ -37,24 +34,38 @@ const GalleryManga = ({ mangaName }) => {
         <h3 className='ms-gallery-info-title'>
           {serie.nombre}
         </h3>
-        <p className='ms-gallery-info-description'>{serie.resumenHistoria}</p>
+        <p className='ms-gallery-info-description'>{serieActive ? serie.resumenHistoria : ''}</p>
         <div className='ms-gallery-info-img-container'>
-          <img className='ms-gallery-info-img' src={serie.imagenBanner} alt='' />
+          <img className='ms-gallery-info-img' src={serieActive ? serie.imagenBanner : ''} alt='' />
         </div>
       </div>
       <div className='ms-gallery-mangas'>
         {
-            mangas.length
-              ? mangas.slice(0, 4).map(manga => <CardManga
+            mangasActive
+              ? mangas.slice(page * MANGAS_PER_PAGE, page * MANGAS_PER_PAGE + MANGAS_PER_PAGE).map(manga => <CardManga
                   key={manga.id}
                   image={manga.imagenTomo}
                   name={manga.nombre}
                   price={1800}
                   volume={manga.volumen}
-                                                />)
+                                                                                                            />
+              )
               : ''
         }
+        <LeftArrow
+          width='2rem'
+          height='2rem'
+          onClick={prevPageHandler}
+          className={`ms-gallery-page-arrow-button arrow-left ${stillLessMangas(page) ? '' : 'hiden'}`}
+        />
+        <RightArrow
+          width='2rem'
+          height='2rem'
+          onClick={nextPageHandler}
+          className={`ms-gallery-page-arrow-button arrow-rigth ${stillMoreMangas(page) ? '' : 'hiden'}`}
+        />
       </div>
+
     </div>
   )
 }
