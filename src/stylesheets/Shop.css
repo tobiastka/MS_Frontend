@@ -1,16 +1,48 @@
 .ms-shop-body {
-    background-color: red;
     display: flex;
     gap: 0.3rem;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .ms-shop-filter {
-    background-color: blue;
-    flex: 1;
+    width: 20%;
+    background-color: red;
+}
+
+.ms-shop-products-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .ms-shop-products {
-    background-color: blueviolet;
-    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: end;
+}
+
+.ms-shop-products-sort {
+    margin-left: 1.1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end;
+    align-items: end;
+}
+
+.ms-shop-products-sort select {
+    background-color: transparent;
+    appearance: none;
+    outline: none;
+    border: 0;
+    font-size: 1.2rem;
+    height: 100%;
+    text-align: center;
+}
+
+.ms-sort-label {
+    font-size: 1.2rem;
 }
