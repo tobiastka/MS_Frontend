@@ -1,17 +1,19 @@
 .ms-card-body {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 19rem;
+    max-width: 25%;
     font-family: 'Poppins', sans-serif;
-    border: 2px solid #45454589;
-    height: 100%;
-    background-color: var(--color-claro);
+    border: 2px solid #45454585;
+    background-color: white;
     transition: background-color, 500ms;
     cursor: pointer;
+    height: 33rem;
+    max-height: 100%;
 }
 
 .ms-card-body:hover {
-    background-color: var(--color-claro-2);
+    background-color: var(--color-claro);
 
 }
 
@@ -35,6 +37,7 @@
     bottom: 0;
     z-index: 10;
     position: absolute;
+    /* border: 2px solid #45454589; */
 }
 
 .ms-card-info {

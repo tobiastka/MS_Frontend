@@ -7,7 +7,7 @@ const CardManga = ({ image, name, price, volume }) => {
       </div>
       <div className='ms-card-info'>
         <div className='ms-card-title'>{`${name}, tomo ${volume}`}</div>
-        <div className='ms-card-price'>1800 $</div>
+        <div className='ms-card-price'>{price} $</div>
         <div className='ms-card-status'>•en stock</div>
         <div className='ms-card-button-container'><button className='ms-card-button'>Agregar al carrito</button></div>
       </div>
