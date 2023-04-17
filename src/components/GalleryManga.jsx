@@ -28,6 +28,8 @@ const GalleryManga = ({ mangaName }) => {
     if (stillLessMangas(page)) setPage(page => --page)
   }
 
+  const mangasInView = mangas.slice(page * MANGAS_PER_PAGE, page * MANGAS_PER_PAGE + MANGAS_PER_PAGE)
+
   return (
     <div className='ms-gallery-body'>
       <div className='ms-gallery-info'>
@@ -42,13 +44,13 @@ const GalleryManga = ({ mangaName }) => {
       <div className='ms-gallery-mangas'>
         {
             mangasActive
-              ? mangas.slice(page * MANGAS_PER_PAGE, page * MANGAS_PER_PAGE + MANGAS_PER_PAGE).map(manga => <CardManga
+              ? mangasInView.map(manga => <CardManga
                   key={manga.id}
                   image={manga.imagenTomo}
                   name={manga.nombre}
                   price={1800}
                   volume={manga.volumen}
-                                                                                                            />
+                                          />
               )
               : ''
         }

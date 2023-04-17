@@ -50,6 +50,7 @@
     gap: 0.5rem;
     box-shadow: 5px 4px 12px 1px rgba(0, 0, 0, 0.31);
     position: relative;
+    justify-content: center;
 
 }
 
