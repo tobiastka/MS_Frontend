@@ -48,7 +48,9 @@ const formatMangas = (mangas) => {
       imagenBanner: manga.collection.imagenBanner,
       resumenHistoria: manga.collection.resumenHistoria,
       imagenTomo: manga.imagen,
-      volumen: manga.volumen
+      volumen: manga.volumen,
+      precio: manga.precioTomo,
+      genero: manga.collection.genero
     }
   })
   return formatedMangas
