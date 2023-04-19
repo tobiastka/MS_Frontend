@@ -8,7 +8,7 @@
 
 .ms-shop-filter {
     width: 20%;
-    background-color: red;
+    margin-top: 2.5rem;
 }
 
 .ms-shop-products-container {
@@ -21,8 +21,8 @@
 .ms-shop-products {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: end;
+    gap: 1.2rem;
+
 }
 
 .ms-shop-products-sort {
@@ -45,4 +45,9 @@
 
 .ms-sort-label {
     font-size: 1.2rem;
+}
+
+.ms-filter-checkbox {
+    display: flex;
+    gap: 0.3rem;
 }
