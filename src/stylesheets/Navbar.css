@@ -1,4 +1,5 @@
 .ms-navbar {
+    width: 100%;
     height: 8rem;
     display: flex;
     flex-direction: row;
